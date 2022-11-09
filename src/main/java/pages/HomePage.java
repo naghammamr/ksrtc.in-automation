@@ -4,11 +4,6 @@ import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
-import org.openqa.selenium.support.ui.ExpectedCondition;
-import org.openqa.selenium.support.ui.ExpectedConditions;
-import org.openqa.selenium.support.ui.WebDriverWait;
-import pageBase.PageBase;
-
 import static org.openqa.selenium.support.ui.ExpectedConditions.elementToBeClickable;
 
 public class HomePage extends PageBase {
@@ -16,18 +11,6 @@ public class HomePage extends PageBase {
     public HomePage(WebDriver driver) {
         super(driver);
     }
-
-//    @FindBy(id="fromPlaceName")
-//    WebElement fromPlaceNameTxtField;
-//
-//    @FindBy(id="toPlaceName")
-//    WebElement toPlaceNameTxtField;
-
-//    public void setFromANDToPlaceName(String fromPlace, String toPlace) {
-//
-//        fromPlaceNameTxtField.sendKeys(fromPlace);
-//        toPlaceNameTxtField.sendKeys(toPlace);
-//    }
 
     @FindBy(xpath = "//div[@class='carousel-inner']//a[@class='carousel-control-next']")
     WebElement routeSlider;
@@ -39,25 +22,24 @@ public class HomePage extends PageBase {
     WebElement arrivalDate;
 
     //
-    @FindBy(xpath = "//button[@class='btn btn-primary btn-lg btn-block btn-booking']")
-    WebElement searchForBusBtn;
+    //@FindBy(xpath = "//button[@class='btn btn-primary btn-lg btn-block btn-booking']")
+    ///WebElement searchForBusBtn;
+
+    public By searchForBusBtn = By.xpath("//button[@class='btn btn-primary btn-lg btn-block btn-booking']");
 
     @FindBy(id = "corover-close-btn")
     WebElement closepopupBtn;
 
-    public void selectPopularRouteAndDate() throws InterruptedException {
+    public void selectPopularRouteAndDate() {
 
         routeSlider.click();
-        Thread.sleep(2000);
         routeLink.click();
         arrivalDate.click();
-
     }
 
-    public void searchForBus() throws InterruptedException {
+    public void searchForBus(WebDriver driver) {
         closepopupBtn.click();
-        Thread.sleep(5000);
-        searchForBusBtn.click();
+        driver.findElement(searchForBusBtn).click();
     }
 
 }

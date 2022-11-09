@@ -4,7 +4,6 @@ import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
 import org.openqa.selenium.support.FindBy;
 import org.openqa.selenium.support.ui.Select;
-import pageBase.PageBase;
 
 public class SeatReservationPage extends PageBase {
 
@@ -12,6 +11,9 @@ public class SeatReservationPage extends PageBase {
         super(driver);
     }
 
+    //@FindBy(id = "SrvcSelectBtnForward0")
+    @FindBy(xpath="//div[@class='select-service']//input[@id='SrvcSelectBtnForward0']")
+    WebElement selectSeatBtn;
     @FindBy(id="Forward-1467550949362")
     WebElement boardingPointSelect;
 
@@ -45,9 +47,6 @@ public class SeatReservationPage extends PageBase {
 
     @FindBy(id = "concessionIdsForward0")
     WebElement passengerConcessionDDLll;
-
-    @FindBy(id = "SrvcSelectBtnForward0")
-    WebElement selectSeatBtn;
 
     @FindBy(id = "PgBtn")
     WebElement makePaymentBtn;

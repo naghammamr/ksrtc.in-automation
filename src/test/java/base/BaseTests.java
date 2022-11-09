@@ -15,7 +15,8 @@ public class BaseTests {
     {
         System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir") + "\\resources\\chromedriver.exe");
         driver = new ChromeDriver();
-        driver.manage().window().setSize(new Dimension(1024, 768));
+        //driver.manage().window().setSize(new Dimension(1024, 768));
+        driver.manage().window().maximize();
         driver.navigate().to("https://ksrtc.in/oprs-web/guest/home.do?h=1");
     }
 

@@ -3,15 +3,20 @@
     <test name="Reservation" preserve-order="true">
         <classes>
 
-            <class name="tests.HomeTest" />
+            <class name="tests.HomeTest"/>
             <methods>
-                <include name="userCanEnterFromANDToPlace" />
-                <include name="userCanClickOnSearchBus"/>
+                <include name="userCanEnterFromANDToPlace"/>
+<!--                <include name="userCanClickOnSearchBus"/>-->
             </methods>
 
-            <class name="tests.SeatReservationTest" />
+            <class name="tests.SeatReservationTest"/>
             <methods>
-                <include name="userCanReserveASeat" />
+                <include name="userCanReserveASeat"/>
+            </methods>
+
+            <class name="tests.PaymentTest"/>
+            <methods>
+                <include name="userCanEnterPaymentDetails"/>
             </methods>
 
         </classes>

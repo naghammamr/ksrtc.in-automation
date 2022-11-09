@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE suite SYSTEM "https://testng.org/testng-1.0.dtd">
+<suite name="Failed suite [product purchase suite]">
+  <test thread-count="5" name="Reservation(failed)">
+    <classes>
+      <class name="tests.SeatReservationTest">
+        <methods>
+          <include name="userCanReserveASeat"/>
+          <include name="closeDriver"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- tests.SeatReservationTest -->
+      <class name="tests.PaymentTest">
+        <methods>
+          <include name="userCanEnterPaymentDetails"/>
+          <include name="closeDriver"/>
+          <include name="openBrowser"/>
+        </methods>
+      </class> <!-- tests.PaymentTest -->
+    </classes>
+  </test> <!-- Reservation(failed) -->
+</suite> <!-- Failed suite [product purchase suite] -->
